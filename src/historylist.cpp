@@ -146,7 +146,7 @@ void historyList::getHistory()
                     int lastBar = 0;
                     for (qsizetype i = 0; i < buffer.length(); i++)
                     {
-                        if (buffer[i] == '/' || buffer[i] == '\\')
+                        if (buffer[int(i)] == '/' || buffer[int(i)] == '\\')
                         {
                             lastBar = i + 1;
                         }
@@ -165,7 +165,7 @@ void historyList::getHistory()
                 int lastBar = 0;
                 for (qsizetype i = 0; i < buffer_value.length(); i++)
                 {
-                    if (buffer_value[i] == '/' || buffer_value[i] == '\\')
+                    if (buffer_value[int(i)] == '/' || buffer_value[int(i)] == '\\')
                     {
                         lastBar = i + 1;
                     }
@@ -454,7 +454,7 @@ void historyList::on_launch_pushButton_clicked()
                     for (qsizetype i = 0; i < str.length(); i++)
                     {
 
-                        QChar c = str[i];
+                        QChar c = str[int(i)];
                         if (c == ' ')
                         {
                             if (strToAdd != "")
@@ -466,9 +466,9 @@ void historyList::on_launch_pushButton_clicked()
                         else if (c == '\"')
                         {
                             i++;
-                            while (str[i] != '\"')
+                            while (str[int(i)] != '\"')
                             {
-                                strToAdd.push_back(str[i]);
+                                strToAdd.push_back(str[int(i)]);
                                 i++;
                             }
                         }

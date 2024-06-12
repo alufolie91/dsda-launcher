@@ -51,7 +51,7 @@ void endoom::showEndoom(QString consoleOutput)
 
         i++;
         if (qsl[i].size() < 3) continue;
-        QString character = qsl[i][qsl[i].size()-1];
+        QString character = QString(qsl[i][qsl[i].size() - 1]);
 
         i++;
         if (character == " ") character = "&nbsp;";
